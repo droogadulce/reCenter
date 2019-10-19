@@ -1,0 +1,24 @@
+{
+  "name": "reCenter",
+  "version": "1.0.0",
+  "description": "Proyecto de la Escuela de JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/droogadulce/reCenter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/droogadulce/reCenter/issues"
+  },
+  "homepage": "https://github.com/droogadulce/reCenter#readme",
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}
