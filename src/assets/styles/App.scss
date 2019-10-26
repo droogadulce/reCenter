@@ -1,4 +1,12 @@
 body {
   margin: 0;
-  background-color: #8acbbb;
+  > * {
+    box-sizing: border-box;
+  }
+}
+
+.App {
+  max-width: 100%;
+  overflow-x: hidden;
+  display: block;
 }

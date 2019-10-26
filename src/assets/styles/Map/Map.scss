@@ -1,4 +1,4 @@
-body {
+/*body {
   margin: 0;
   padding: 0;
 }
@@ -6,4 +6,29 @@ body {
 section {
   margin: 0;
   padding: 0;
+}*/
+
+.map__container {
+  display: grid;
+  grid-template: 100px 1fr / 30% 70%;
+  height: 100vh;
+  grid-template-areas:
+    'map__items_list map__items_filter'
+    'map__items_list map__items_map';
+  position: relative;
+}
+
+.map__items_list {
+  grid-area: map__items_list;
+}
+
+.map__items_filter {
+  grid-area: map__items_filter;
+  border: 1px solid blue;
+}
+
+.map__items_map {
+  grid-area: map__items_map;
+  border: 1px solid pink;
+  overflow: hidden;
 }

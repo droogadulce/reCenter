@@ -3,11 +3,7 @@ import MapContainer from '../components/MapContainer';
 import '../assets/styles/Map/Map.scss';
 
 const SearchMap = () => {
-  return (
-    <div className='App'>
-      <MapContainer />
-    </div>
-  );
+  return <MapContainer />;
 };
 
 export default SearchMap;
