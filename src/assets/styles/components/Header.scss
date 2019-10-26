@@ -1,0 +1,68 @@
+$principalFont:'Oleo Script',
+cursive;
+
+$search_url: url("../../static/search.png");
+$color1: #fbfad3;
+$color2: #c6e377;
+$color3: #729d39;
+$color4: #36622b;
+
+.header {
+  background-color: $color1;
+  display: grid;
+  grid-template-columns: 20% 1fr 22%;
+  grid-template-rows: 80px;
+}
+
+.header__logo {
+  font-size: 50px;
+  margin: 0;
+  grid-column: 1 / 2;
+  place-self: center;
+  font-family: $principalFont;
+}
+
+.header__buscador {
+  grid-column: 2 / span 1;
+  place-self: center;
+}
+
+.header__buscador input {
+  background-color: rgba($color: #000000, $alpha: 0.05);
+  border: solid 2px $color4;
+  color: $color4;
+  border-radius: 30px;
+  background-image: $search_url;
+  // El inspector marca url(assets/url) -> cómo quitar ese assets para que coincida la url?
+  background-size: 10px;
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 25em;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.header__registro {
+  grid-column-end: 4;
+  place-self: center end;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header__registro img {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 0 0;
+}
+
+.header__registro p {
+  margin: 0 10px 0 0;
+  font-size: 20px;
+  display: ruby-text-container;
+}
+
+.header__registro p:hover {
+  text-decoration: underline;
+}

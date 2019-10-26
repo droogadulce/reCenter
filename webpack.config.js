@@ -12,8 +12,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -22,19 +21,27 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
+        use: [{
+          loader: 'html-loader',
+        }, ],
       },
       {
         test: /\.(s*)css$/,
-        use: [
-          { loader: MiniCssExtractPlugin.loader },
+        use: [{
+            loader: MiniCssExtractPlugin.loader
+          },
           'css-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(png|gif|jpg)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'assets/[hash].[ext]'
+          },
+        }],
       },
     ],
   },
