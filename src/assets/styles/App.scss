@@ -1,4 +1,13 @@
+$otherFont: 'Nunito',
+sans-serif;
+$color1: #fbfad3;
+$color2: #c6e377;
+$color3: #729d39;
+$color4: #36622b;
+
 body {
   margin: 0;
-  background-color: #8acbbb;
+  background-color: $color2;
+  color: $color4;
+  font-family: $otherFont;
 }
