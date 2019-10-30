@@ -1,18 +1,12 @@
 import React from "react";
+import Carrousel from "../components/Carrousel";
+import Categories from "../components/Categories";
 import "../assets/styles/App.scss";
 
 const Home = () => (
   <>
-    <section className="carousel">
-      <div className="carousel__item">
-        <img src="/" alt="" />
-      </div>
-    </section>
-    <section className="categories">
-      <div className="categories__item">
-        <img src="/" alt="" />
-      </div>
-    </section>
+    <Carrousel />
+    <Categories />
   </>
 );
 
