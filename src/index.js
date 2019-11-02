@@ -8,17 +8,41 @@ import App from "./routes/App";
 const initialState = {
   user: {},
   garbageTags: [
-    "vidrio",
-    "papel",
-    "cartón",
-    "plástico",
-    "unicel",
-    "metales",
-    "textiles",
-    "tetra brik",
-    "electrónicos",
-    "pilas",
-    "aceite"
+    {
+      id: 1,
+      tag: "vidrio"
+    },
+    {
+      id: 2,
+      tag: "papel"
+    },
+    {
+      id: 3,
+      tag: "cartón"
+    },
+    { id: 4, tag: "plástico" },
+    {
+      id: 5,
+      tag: "unicel"
+    },
+    {
+      id: 6,
+      tag: "metales"
+    },
+    {
+      id: 7,
+      tag: "textiles"
+    },
+    { id: 8, tag: "tetra brik" },
+    { id: 9, tag: "electrónicos" },
+    {
+      id: 10,
+      tag: "pilas"
+    },
+    {
+      id: 11,
+      tag: "aceite"
+    }
   ],
   centers: [
     {
