@@ -1,7 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import "../assets/styles/App.scss";
 
-const Home = () => (
+const Home = ({ tags }) => (
   <>
     <section className="carousel">
       <div className="carousel__item">
@@ -11,9 +12,21 @@ const Home = () => (
     <section className="categories">
       <div className="categories__item">
         <img src="/" alt="" />
+        {tags.map(item => (
+          <h1>{item}</h1>
+        ))}
       </div>
     </section>
   </>
 );
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    tags: state.garbageTags
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(Home);
