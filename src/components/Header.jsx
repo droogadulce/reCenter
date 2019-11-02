@@ -1,18 +1,18 @@
-import React from "react";
-import "../assets/styles/components/Header.scss";
-import user_image from "../assets/static/user.png";
+import React from 'react';
+import '../assets/styles/components/Header.scss';
+import userImage from '../assets/static/user.png';
 
 const Header = () => (
-  <header className="header">
-    <h1 className="header__logo">
-      <a>reCenter</a>
+  <header className='header'>
+    <h1 className='header__logo'>
+      <a href='/'>reCenter</a>
     </h1>
     {/* se sustituira por el png del logo */}
-    <div className="header__buscador">
-      <input type="text" placeholder="Encuentra centros de reciclaje..." />
+    <div className='header__buscador'>
+      <input type='text' placeholder='Encuentra centros de reciclaje...' />
     </div>
-    <div className="header__registro">
-      <img src={user_image} alt="perfil-logo" />
+    <div className='header__registro'>
+      <img src={userImage} alt='perfil-logo' />
       <p>Inicia Sesión</p>
       <p>Regístrate</p>
     </div>

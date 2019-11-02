@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 import ItemsList from './Map/ItemsList';
+import '../assets/styles/Map/Map.scss';
 
 class MapContainer extends Component {
   render() {

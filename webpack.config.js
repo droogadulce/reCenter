@@ -7,12 +7,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -21,14 +23,17 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [{
-          loader: 'html-loader',
-        }, ],
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.(s*)css$/,
-        use: [{
-            loader: MiniCssExtractPlugin.loader
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
           'sass-loader',
@@ -36,13 +41,15 @@ module.exports = {
       },
       {
         test: /\.(png|gif|jpg)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: 'assets/[hash].[ext]',
-            publicPath: '../',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[hash].[ext]',
+              publicPath: '../',
+            },
           },
-        }],
+        ],
       },
     ],
   },

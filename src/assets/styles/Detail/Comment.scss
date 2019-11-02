@@ -1,0 +1,23 @@
+.comment__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment__user-info {
+  flex: 1;
+  flex-direction: row;
+}
+
+.comment__content {
+  flex: 1;
+}
+
+.comment__img {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.comment__user {
+  display: inline-block;
+}

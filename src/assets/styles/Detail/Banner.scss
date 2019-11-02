@@ -1,0 +1,32 @@
+.banner__container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  height: 100vh;
+  grid-gap: 5px;
+}
+
+.banner__img {
+  background: lightblue;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+.banner__img:nth-of-type(1) {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+}
+
+.banner__img:nth-of-type(2) {
+  grid-column: 4 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.banner__img:nth-of-type(3) {
+  grid-column: 6 / span 2;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}

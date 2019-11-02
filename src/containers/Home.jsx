@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import Carrousel from "../components/Carrousel";
-import Categories from "../components/Categories";
-import "../assets/styles/App.scss";
+import React from 'react';
+import { connect } from 'react-redux';
+import Carrousel from '../components/Carrousel';
+import Categories from '../components/Categories';
+import '../assets/styles/App.scss';
 
 const Home = ({ tags }) => (
   <>
@@ -15,7 +15,7 @@ const Home = ({ tags }) => (
 
 const mapStateToProps = state => {
   return {
-    tags: state.garbageTags
+    tags: state.garbageTags,
   };
 };
 

@@ -1,0 +1,40 @@
+.detail__container {
+  display: grid;
+  grid-template: 400px 1fr 1fr 1fr / 1fr 1fr;
+  grid-template-areas:
+    'detail__banner detail__banner'
+    'detail__description detail__schedule'
+    'detail__tags detail__map'
+    'detail__rating detail__map';
+
+  position: relative;
+}
+
+.detail__banner {
+  grid-area: detail__banner;
+}
+
+.detail__description {
+  grid-area: detail__description;
+  margin: 10px;
+}
+
+.detail__tags {
+  grid-area: detail__tags;
+}
+
+.detail__schedule {
+  grid-area: detail__schedule;
+  margin: 10px 30px;
+}
+
+.detail__rating {
+  grid-area: detail__rating;
+  margin: 10px;
+}
+
+.detail__map {
+  grid-area: detail__map;
+  width: 600px;
+  height: 400px;
+}

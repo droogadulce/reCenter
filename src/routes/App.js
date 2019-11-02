@@ -6,6 +6,7 @@ import Login from '../containers/Login';
 import Register from '../containers/Register';
 import NotFound from '../containers/NotFound';
 import SearchMap from '../containers/SearchMap';
+import Detail from '../containers/Detail';
 
 const App = () => (
   <BrowserRouter>
@@ -15,6 +16,7 @@ const App = () => (
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/searchmap' component={SearchMap} />
+        <Route exact path='/searchmap/detail' component={Detail} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

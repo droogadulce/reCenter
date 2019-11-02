@@ -1,11 +1,11 @@
-import React from "react";
-import Carousel from "react-bootstrap/Carousel";
-import "../assets/styles/components/Carrousel.scss";
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import '../assets/styles/components/Carrousel.scss';
 
 const Carrousel = () => (
-  <section className="carousel">
-    <div className="carousel__item">
-      <img src="/" alt="" />
+  <section className='carousel'>
+    <div className='carousel__item'>
+      <img src='/' alt='' />
     </div>
   </section>
 );
