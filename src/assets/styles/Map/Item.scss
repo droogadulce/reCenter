@@ -1,6 +1,6 @@
 .item__container {
   display: grid;
-  grid-template: repeat(4, 1fr) / 1fr 1fr 1fr;
+  grid-template: repeat(4, 40px) / 1fr 1fr 1fr;
   grid-template-areas:
     'item__img item__title item__title'
     'item__img item__address item__address'

@@ -1,18 +1,29 @@
 import React from 'react';
 
-const Schedule = () => (
-  <div>
-    <p>
-      <b>Horarios</b>
-    </p>
-    <p>Lunes: 10:00 - 17:00</p>
-    <p>Martes: 10:00 - 17:00</p>
-    <p>Miércoles: 10:00 - 17:00</p>
-    <p>Jueves: 10:00 - 17:00</p>
-    <p>Viernes: 10:00 - 17:00</p>
-    <p>Sábado: 10:00 - 17:00</p>
-    <p>Domingo: 10:00 - 17:00</p>
-  </div>
-);
+const Schedule = ({ schedule }) => {
+  const {
+    lunes,
+    martes,
+    miercoles,
+    jueves,
+    viernes,
+    sabado,
+    domingo,
+  } = schedule;
+  return (
+    <div>
+      <p>
+        <b>Horarios</b>
+      </p>
+      <p>Lunes: {lunes}</p>
+      <p>Martes: {martes}</p>
+      <p>Miércoles: {miercoles}</p>
+      <p>Jueves: {jueves}</p>
+      <p>Viernes: {viernes}</p>
+      <p>Sábado: {sabado}</p>
+      <p>Domingo: {domingo}</p>
+    </div>
+  );
+};
 
 export default Schedule;

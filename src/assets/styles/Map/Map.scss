@@ -20,6 +20,9 @@ section {
 
 .map__items_list {
   grid-area: map__items_list;
+  overflow: hidden;
+  overflow-y: scroll;
+  text-decoration: none;
 }
 
 .map__items_filter {
