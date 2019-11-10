@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { getCenterDetail } from '../actions';
 import Banner from '../components/Detail/Banner';
 import Description from '../components/Detail/Description';
@@ -21,6 +21,7 @@ const Detail = props => {
   if (props.detail) {
     const { detail } = props;
     const { name, description, address, rating, schedule, tags } = detail;
+    const { lat, lng } = address;
     return (
       <section className='detail__container'>
         <div className='detail__banner'>
@@ -46,10 +47,16 @@ const Detail = props => {
         <div className='detail__map'>
           <Map
             google={google}
-            zoom={10}
+            zoom={15}
             style={{ maxWidth: '600px', maxHeight: '400px' }}
-            initialCenter={{ lat: 19.5943885, lng: -97.9526044 }}
-          />
+            initialCenter={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
+          >
+            <Marker
+              title={name}
+              name={name}
+              position={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
+            />
+          </Map>
         </div>
       </section>
     );

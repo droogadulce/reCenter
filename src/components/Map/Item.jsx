@@ -12,7 +12,7 @@ const Item = props => {
       <div className='item__container'>
         <img className='item__img' src={recycleIcon} alt='Center' />
         <h2 className='item__title'>{name}</h2>
-        <p className='item__address'>{address}</p>
+        <p className='item__address'>{address.address}</p>
         <div className='item__tags'>
           <p>{tags.map(item => `${item.type} `)}</p>
         </div>
