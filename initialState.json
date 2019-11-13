@@ -31,6 +31,24 @@
         "tags": ["PET", "latas", "cartón"],
         "rating": 4,
         "reward": true
+      },
+      {
+        "id": 2,
+        "name": "Reciclaceite",
+        "description": "Centro de reciclaje de aceite Ciudad de México",
+        "address": "Nicolás San Juan 129, Col del Valle Sur, 03100 Del. Benito Juárez, CDMX",
+        "schedule": {
+          "lunes": "10:00-17:00",
+          "martes": "10:00-17:00",
+          "miercoles": "10:00-17:00",
+          "jueves": "10:00-17:00",
+          "viernes": "10:00-17:00",
+          "sabado": "10:00-14:00",
+          "domingo": "cerrado"
+        },
+        "tags": ["aceite"],
+        "rating": 4,
+        "reward": true
       }
     ]
   }
