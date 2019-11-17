@@ -1,13 +1,16 @@
 const express = require('express');
-const { centersMock } = require('../utils/mocks/centers');
+const CentersService = require('../services/centers');
 
 function centersApi(app) {
   const router = express.Router();
   app.use('/api/centers', router);
 
+  const centersService = new CentersService();
+
   router.get('/', async function(req, res, next) {
+    const { tags } = req.query;
     try {
-      const centers = await Promise.resolve(centersMock);
+      const centers = await centersService.getCenters({ tags });
       res.status(200).json({
         data: centers,
         message: 'centers listed'
@@ -18,8 +21,9 @@ function centersApi(app) {
   });
 
   router.get('/:centerId', async function(req, res, next) {
+    const { centerId } = req.params;
     try {
-      const center = await Promise.resolve(centersMock[0]);
+      const center = await centersService.getCenter({ centerId });
       res.status(200).json({
         data: center,
         message: 'center retrieved'
@@ -30,8 +34,9 @@ function centersApi(app) {
   });
 
   router.post('/', async function(req, res, next) {
+    const { body: center } = req;
     try {
-      const createdCenterId = await Promise.resolve(centersMock[0].id);
+      const createdCenterId = await centersService.createCenter({ center });
       res.status(201).json({
         data: createdCenterId,
         message: 'center created'
@@ -42,8 +47,13 @@ function centersApi(app) {
   });
 
   router.put('/:centerId', async function(req, res, next) {
+    const { centerId } = req.params;
+    const { body: center } = req;
     try {
-      const updatedCenterId = await Promise.resolve(centersMock[0].id);
+      const updatedCenterId = await centersService.updateCenter({
+        centerId,
+        center
+      });
       res.status(200).json({
         data: updatedCenterId,
         message: 'center updated'
@@ -54,8 +64,9 @@ function centersApi(app) {
   });
 
   router.delete('/:centerId', async function(req, res, next) {
+    const { centerId } = req.params;
     try {
-      const deletedCenterId = await Promise.resolve(centersMock[0].id);
+      const deletedCenterId = await centersService.deleteCenter({ centerId });
       res.status(200).json({
         data: deletedCenterId,
         message: 'center deleted'
