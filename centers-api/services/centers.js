@@ -1,29 +1,41 @@
-/* eslint-disable class-methods-use-this */
-const { centersMock } = require('../utils/mocks/centers');
+const MongoLib = require('../lib/mongo');
 
 class CentersService {
-  async getCenters() {
-    const centers = await Promise.resolve(centersMock);
+  constructor() {
+    this.collection = 'centers';
+    this.mongoDB = new MongoLib();
+  }
+
+  async getCenters({ tags }) {
+    const query = tags && { tags: { $in: tags } };
+    const centers = await this.mongoDB.getAll(this.collection, query);
     return centers || [];
   }
 
-  async getCenter() {
-    const center = await Promise.resolve(centersMock[0]);
+  async getCenter({ centerId }) {
+    const center = await this.mongoDB.get(this.collection, centerId);
     return center || {};
   }
 
-  async createCenter() {
-    const createdCenterId = await Promise.resolve(centersMock[0].id);
+  async createCenter({ center }) {
+    const createdCenterId = await this.mongoDB.create(this.collection, center);
     return createdCenterId;
   }
 
-  async updateCenter() {
-    const updatedCenterId = await Promise.resolve(centersMock[0].id);
+  async updateCenter({ centerId, center } = {}) {
+    const updatedCenterId = await this.mongoDB.update(
+      this.collection,
+      centerId,
+      center
+    );
     return updatedCenterId;
   }
 
-  async deleteCenter() {
-    const deletedCenterId = await Promise.resolve(centersMock[0].id);
+  async deleteCenter({ centerId }) {
+    const deletedCenterId = await this.mongoDB.delete(
+      this.collection,
+      centerId
+    );
     return deletedCenterId;
   }
 }
