@@ -1,6 +1,14 @@
 const express = require('express');
 const CentersService = require('../services/centers');
 
+const {
+  centerIdSchema,
+  createCenterSchema,
+  updateCenterSchema
+} = require('../utils/schemas/centers');
+
+const validationHandler = require('../utils/middleware/validationHandler');
+
 function centersApi(app) {
   const router = express.Router();
   app.use('/api/centers', router);
@@ -20,20 +28,28 @@ function centersApi(app) {
     }
   });
 
-  router.get('/:centerId', async function(req, res, next) {
-    const { centerId } = req.params;
-    try {
-      const center = await centersService.getCenter({ centerId });
-      res.status(200).json({
-        data: center,
-        message: 'center retrieved'
-      });
-    } catch (error) {
-      next(error);
+  router.get(
+    '/:centerId',
+    validationHandler({ centerId: centerIdSchema }, 'params'),
+    async function(req, res, next) {
+      const { centerId } = req.params;
+      try {
+        const center = await centersService.getCenter({ centerId });
+        res.status(200).json({
+          data: center,
+          message: 'center retrieved'
+        });
+      } catch (error) {
+        next(error);
+      }
     }
-  });
+  );
 
-  router.post('/', async function(req, res, next) {
+  router.post('/', validationHandler(createCenterSchema), async function(
+    req,
+    res,
+    next
+  ) {
     const { body: center } = req;
     try {
       const createdCenterId = await centersService.createCenter({ center });
@@ -46,35 +62,44 @@ function centersApi(app) {
     }
   });
 
-  router.put('/:centerId', async function(req, res, next) {
-    const { centerId } = req.params;
-    const { body: center } = req;
-    try {
-      const updatedCenterId = await centersService.updateCenter({
-        centerId,
-        center
-      });
-      res.status(200).json({
-        data: updatedCenterId,
-        message: 'center updated'
-      });
-    } catch (error) {
-      next(error);
+  router.put(
+    '/:centerId',
+    validationHandler({ centerId: centerIdSchema }, 'params'),
+    validationHandler(updateCenterSchema),
+    async function(req, res, next) {
+      const { centerId } = req.params;
+      const { body: center } = req;
+      try {
+        const updatedCenterId = await centersService.updateCenter({
+          centerId,
+          center
+        });
+        res.status(200).json({
+          data: updatedCenterId,
+          message: 'center updated'
+        });
+      } catch (error) {
+        next(error);
+      }
     }
-  });
+  );
 
-  router.delete('/:centerId', async function(req, res, next) {
-    const { centerId } = req.params;
-    try {
-      const deletedCenterId = await centersService.deleteCenter({ centerId });
-      res.status(200).json({
-        data: deletedCenterId,
-        message: 'center deleted'
-      });
-    } catch (error) {
-      next(error);
+  router.delete(
+    '/:centerId',
+    validationHandler({ centerId: centerIdSchema }, 'params'),
+    async function(req, res, next) {
+      const { centerId } = req.params;
+      try {
+        const deletedCenterId = await centersService.deleteCenter({ centerId });
+        res.status(200).json({
+          data: deletedCenterId,
+          message: 'center deleted'
+        });
+      } catch (error) {
+        next(error);
+      }
     }
-  });
+  );
 }
 
 module.exports = centersApi;

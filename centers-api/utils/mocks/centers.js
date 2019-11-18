@@ -1,6 +1,6 @@
 const centersMock = [
   {
-    id: 1,
+    id: '507f1f77bcf86cd799439011',
     name: 'Recupera del Valle',
     description: 'Centro de reciclaje de latas y botellas en Ciudad de México',
     address: {
@@ -26,7 +26,7 @@ const centersMock = [
     reward: true
   },
   {
-    id: 2,
+    id: '107f1f77bcf86cd799439011',
     name: 'Recicladora Ecoazteca',
     description: 'Centro de reciclaje de la Ciudad de México',
     address: {
@@ -49,7 +49,7 @@ const centersMock = [
     reward: true
   },
   {
-    id: 3,
+    id: '207f1f77bcf86cd799439011',
     name: 'Recicla Computadoras',
     description: 'Centro de reciclaje de equipos de cómputo',
     address: {
@@ -72,7 +72,7 @@ const centersMock = [
     reward: true
   },
   {
-    id: 4,
+    id: '607f1f77bcf86cd799439011',
     name: 'Recicla Ortiz',
     description: 'Centro de reciclaje de tetrabrik',
     address: {
@@ -95,7 +95,7 @@ const centersMock = [
     reward: true
   },
   {
-    id: 5,
+    id: '307f1f77bcf86cd799439011',
     name: 'Comisión Nacional De Libros De Texto Gratuitos',
     description: 'Centro de reciclaje de papel',
     address: {
@@ -118,7 +118,7 @@ const centersMock = [
     reward: true
   },
   {
-    id: 6,
+    id: '407f1f77bcf86cd799439011',
     name: 'Reciclaje de Pilas y Baterías IMU Recicla',
     description: 'Centro de reciclaje de pilas y baterías',
     address: {
