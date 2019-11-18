@@ -23,7 +23,8 @@ const centersMock = [
       { id: 3, type: 'cartón', cost: 0.5 }
     ],
     rating: 4,
-    reward: true
+    reward: true,
+    garbageTypes: ['PET', 'latas', 'cartón']
   },
   {
     id: '107f1f77bcf86cd799439011',
@@ -46,7 +47,8 @@ const centersMock = [
     },
     tags: [{ id: 1, type: 'aceite', cost: 10.0 }],
     rating: 4,
-    reward: true
+    reward: true,
+    garbageTypes: ['aceite']
   },
   {
     id: '207f1f77bcf86cd799439011',
@@ -69,7 +71,8 @@ const centersMock = [
     },
     tags: [{ id: 1, type: 'electrónicos', cost: 100.0 }],
     rating: 5,
-    reward: true
+    reward: true,
+    garbageTypes: ['electrónicos']
   },
   {
     id: '607f1f77bcf86cd799439011',
@@ -92,7 +95,8 @@ const centersMock = [
     },
     tags: [{ id: 1, type: 'tetrabrik', cost: 2.0 }],
     rating: 5,
-    reward: true
+    reward: true,
+    garbageTypes: ['tetrabrik']
   },
   {
     id: '307f1f77bcf86cd799439011',
@@ -115,7 +119,8 @@ const centersMock = [
     },
     tags: [{ id: 1, type: 'papel', cost: 2.5 }],
     rating: 5,
-    reward: true
+    reward: true,
+    garbageTypes: ['papel']
   },
   {
     id: '407f1f77bcf86cd799439011',
@@ -136,10 +141,27 @@ const centersMock = [
       sabado: '10:00-14:00',
       domingo: 'cerrado'
     },
-    tags: [{ id: 1, type: 'papel', cost: 2.5 }],
+    tags: [{ id: 1, type: 'pilas', cost: 2.5 }],
     rating: 5,
-    reward: true
+    reward: true,
+    garbageTypes: ['pilas']
   }
 ];
 
-module.exports = { centersMock };
+function filteredCentersMock(tag) {
+  return centersMock.filter(center => center.tags.includes(tag));
+}
+
+class CentersServiceMock {
+  // eslint-disable-next-line class-methods-use-this
+  async getCenters() {
+    return Promise.resolve(centersMock);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  async createCenter() {
+    return Promise.resolve(centersMock[0]);
+  }
+}
+
+module.exports = { centersMock, filteredCentersMock, CentersServiceMock };

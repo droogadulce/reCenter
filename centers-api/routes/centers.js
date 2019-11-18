@@ -16,9 +16,9 @@ function centersApi(app) {
   const centersService = new CentersService();
 
   router.get('/', async function(req, res, next) {
-    const { tags } = req.query;
+    const { garbageTypes } = req.query;
     try {
-      const centers = await centersService.getCenters({ tags });
+      const centers = await centersService.getCenters({ garbageTypes });
       res.status(200).json({
         data: centers,
         message: 'centers listed'
