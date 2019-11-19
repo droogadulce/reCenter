@@ -6,7 +6,7 @@ import ratingIcon from '../../assets/static/star-icon.png';
 import recycleIcon from '../../assets/static/recycle.png';
 
 const Item = props => {
-  const { id, name, address, tags, rating } = props;
+  const { id, name, address, garbageTypes, rating } = props;
   return (
     <Link to={`/searchmap/detail/${id}`}>
       <div className='item__container'>
@@ -14,7 +14,7 @@ const Item = props => {
         <h2 className='item__title'>{name}</h2>
         <p className='item__address'>{address.address}</p>
         <div className='item__tags'>
-          <p>{tags.map(item => `${item.type} `)}</p>
+          <p>{garbageTypes.map(item => `${item} `)}</p>
         </div>
         <div className='item__rating'>
           <img

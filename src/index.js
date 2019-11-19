@@ -20,7 +20,7 @@ const initialState = {
       id: 3,
       tag: 'cartón',
     },
-    { id: 4, tag: 'plástico' },
+    { id: 4, tag: 'PET' },
     {
       id: 5,
       tag: 'unicel',
@@ -33,7 +33,7 @@ const initialState = {
       id: 7,
       tag: 'textiles',
     },
-    { id: 8, tag: 'tetra brik' },
+    { id: 8, tag: 'tetrabrik' },
     { id: 9, tag: 'electrónicos' },
     {
       id: 10,
@@ -42,6 +42,10 @@ const initialState = {
     {
       id: 11,
       tag: 'aceite',
+    },
+    {
+      id: 12,
+      tag: 'focos',
     },
   ],
   centers: [
@@ -72,6 +76,7 @@ const initialState = {
       ],
       rating: 4,
       reward: true,
+      garbageTypes: ['PET', 'latas', 'cartón'],
     },
     {
       id: 2,
@@ -95,6 +100,7 @@ const initialState = {
       tags: [{ id: 1, type: 'aceite', cost: 10.0 }],
       rating: 4,
       reward: true,
+      garbageTypes: ['aceite'],
     },
     {
       id: 3,
@@ -118,6 +124,7 @@ const initialState = {
       tags: [{ id: 1, type: 'electrónicos', cost: 100.0 }],
       rating: 5,
       reward: true,
+      garbageTypes: ['electrónicos'],
     },
     {
       id: 4,
@@ -141,6 +148,7 @@ const initialState = {
       tags: [{ id: 1, type: 'tetrabrik', cost: 2.0 }],
       rating: 5,
       reward: true,
+      garbageTypes: ['tetrabrik'],
     },
     {
       id: 5,
@@ -164,6 +172,7 @@ const initialState = {
       tags: [{ id: 1, type: 'papel', cost: 2.5 }],
       rating: 5,
       reward: true,
+      garbageTypes: ['papel'],
     },
     {
       id: 6,
@@ -184,9 +193,10 @@ const initialState = {
         sabado: '10:00-14:00',
         domingo: 'cerrado',
       },
-      tags: [{ id: 1, type: 'papel', cost: 2.5 }],
+      tags: [{ id: 1, type: 'pilas', cost: 2.5 }],
       rating: 5,
       reward: true,
+      garbageTypes: ['pilas'],
     },
   ],
 };

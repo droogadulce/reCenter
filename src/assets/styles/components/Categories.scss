@@ -3,19 +3,50 @@ $color2: #c6e377;
 $color3: #729d39;
 $color4: #36622b;
 
-.categories{
-    margin: 0px;
-    padding: 20px 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+.categories {
+  margin: 0px;
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .categories__item {
-    place-self: center;
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $color3;
+  border-radius: 5px;
+  background-color: $color1;
+  padding: 20px;
+  margin: 5px;
+  min-width: 130px;
+  text-align: center;
+  justify-content: center;
 }
 
-.categories__item p{
-    margin: 0px;    
+.categories__item:hover {
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $color4;
+  border-radius: 5px;
+  background-color: $color3;
+  padding: 20px;
+  margin: 5px;
+  min-width: 130px;
+  text-align: center;
+  justify-content: center;
 }
 
+.categories__item p {
+  margin: 0px;
+  text-decoration: none;
+  color: black;
+}
+
+.categories__item_img {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+}

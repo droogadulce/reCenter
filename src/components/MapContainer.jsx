@@ -9,6 +9,7 @@ class MapContainer extends Component {
   constructor(props) {
     super(props);
     const { centers } = props;
+
     this.state = {
       centers,
       showingInfoWindow: false,
