@@ -6,16 +6,16 @@ import '../assets/styles/components/Categories.scss';
 const Categories = ({ tags }) => (
   <section className='categories'>
     {tags.map(item => (
-      <div className='categories__item' key={item.id} id={item.id}>
-        <Link to={`/searchmap/${item.tag}`}>
+      <Link to={`/searchmap/${item.tag}`}>
+        <div className='categories__item' key={item.id} id={item.id}>
           <p>{item.tag}</p>
           <img
             src={require(`../assets/static/icons/${item.tag}.png`)}
             alt='icono de categoria'
             className='categories__item_img'
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
     ))}
   </section>
 );

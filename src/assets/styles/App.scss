@@ -5,6 +5,9 @@ $color1: #fbfad3;
 $color2: #c6e377;
 $color3: #729d39;
 $color4: #36622b;
+$colorBack: #eaeaea;
+$colorCards: #d9d9d9;
+$colorHigh: #c9f658;
 
 body {
   margin: 0;
@@ -22,12 +25,43 @@ body {
   display: block;
 }
 
-.recycle_title {
+.recycle {
+  position: relative;
+  left: -60px;
   text-align: center;
   margin-top: 20px;
-  border: 5px solid $color4;
-  padding: 10px;
+  border: 2px solid $color4;
+  background-color: $colorBack;
+  box-shadow: 6px 8px 2px rgba($color: $color3, $alpha: 0.8);
   margin-left: 30%;
   margin-right: 30%;
   border-radius: 5px;
+  width: 50vw;
 }
+
+.recycle_title{
+  margin: 5px 0;
+}
+
+.recycle_card{
+  background-color: $colorCards;
+  padding: 8px 0;
+}
+
+.recycle--all{
+  font-weight: bold;
+  margin: 2px;
+}
+
+.recycle--all:hover{
+  border: 2px solid $color3;
+  border-radius: 2rem;
+  margin: 0 2rem;
+  text-shadow: $color1 2px 2px;
+  background-color: $colorHigh;
+}
+
+.recycle--tags{
+  margin: 0;
+}
+

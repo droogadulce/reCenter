@@ -15,6 +15,7 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
+        <Route exact path='/searchmap' component={SearchMap} />
         <Route exact path='/searchmap/:tag' component={SearchMap} />
         <Route exact path='/searchmap/detail/:id' component={Detail} />
         <Route component={NotFound} />
