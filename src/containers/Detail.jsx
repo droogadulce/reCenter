@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { getCenterDetail } from '../actions';
+import { Table } from 'react-bootstrap';
 import Banner from '../components/Detail/Banner';
 import Description from '../components/Detail/Description';
 import Tag from '../components/Detail/Tag';
@@ -17,7 +18,7 @@ const Detail = props => {
   useEffect(() => {
     dispatch(getCenterDetail(id));
   }, []);
-
+ 
   if (props.detail) {
     const { detail } = props;
     const { name, description, address, rating, schedule, tags } = detail;
@@ -31,9 +32,17 @@ const Detail = props => {
           <Description name={name} description={description} />
         </div>
         <div className='detail__tags'>
-          {tags.map(item => (
-            <Tag {...item} key={item.id} />
-          ))}
+          <Table striped bordered>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            {tags.map(item => (
+              <Tag {...item} key={item.id} />
+            ))}
+          </Table>
         </div>
         <div className='detail__schedule'>
           <Schedule schedule={schedule} />
@@ -61,7 +70,7 @@ const Detail = props => {
       </section>
     );
   }
-  return <p>Loading...</p>;
+  return <div className="loading"><p>Loading...</p></div>;
 };
 
 const mapStateToProps = state => {

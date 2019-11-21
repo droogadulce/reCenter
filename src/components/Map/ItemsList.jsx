@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import Item from './Item';
 
 const ItemsList = ({ centers }) => (
-  <div>
+  <>
     {centers.map(item => (
       <Item {...item} key={item.id} />
     ))}
-  </div>
+  </>
 );
 
 const mapStateToProps = state => {

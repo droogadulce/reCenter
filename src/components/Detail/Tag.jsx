@@ -1,11 +1,16 @@
 import React from 'react';
+import { Table } from 'react-bootstrap';
 import '../../assets/styles/Detail/Tag.scss';
 
 const Tag = ({ id, type, cost }) => (
-  <div className='tag__container'>
-    <div className='tag__container__item'>{type}</div>
-    <div className='tag__container__item'>${cost}/kg</div>
-  </div>
+  <React.Fragment>
+    <tbody>
+      <tr>
+        <td colSpan="1">{type}</td>
+        <td>${cost}/Kg</td>
+      </tr>
+    </tbody>
+  </React.Fragment>
 );
 
 export default Tag;

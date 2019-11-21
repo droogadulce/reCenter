@@ -16,8 +16,8 @@ body {
   font-family: $otherFont;
 }
 
-.App {
+#app {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   display: block;
 }
