@@ -1,12 +1,39 @@
+$color1: #fbfad3;
+$color2: #c6e377;
+$color3: #729d39;
+$color4: #36622b;
+$colorBack: #eaeaea;
+$colorCards: #d9d9d9;
+
+
 .item__container {
+  color: $color4;
+  padding-left: 10px ;
+  margin-bottom: 5px ;
   display: grid;
   grid-template: repeat(4, 40px) / 1fr 1fr 1fr;
   grid-template-areas:
-    'item__img item__title item__title'
-    'item__img item__address item__address'
-    'item__img item__tags item__tags'
-    'item__img item__rating item__like_btn';
-  border: 1px solid green;
+  'item__title item__title item__title'
+  'item__img item__address item__address'
+  'item__img item__tags item__tags'
+  'item__img item__rating item__like_btn';
+  place-items: center end;
+  border: 5px solid $colorBack;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem ;
+  border-collapse: collapse ;
+  background-color: $colorCards;
+  scroll-snap-align: start end;
+}
+
+.item__container:hover {
+  border: 5px solid $color3;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem ;
+}
+ 
+p {
+  margin: 0;
 }
 
 .item__img {
@@ -18,14 +45,20 @@
 
 .item__title {
   grid-area: item__title;
-  border: 1px solid red;
+  font-weight: bold;
+  font-size: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
   padding: 0;
 }
 
 .item__address {
   grid-area: item__address;
-  border: 1px solid blue;
+  font-size: 0.875rem;
+  place-self: stretch;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
   padding: 0;
 }
@@ -41,27 +74,31 @@
   display: flex;
   margin: 0;
   padding: 0;
-  vertical-align: middle;
-  border: 1px solid green;
+  align-items: center;
 }
 
 .item__like_btn {
   grid-area: item__like_btn;
   margin: 0;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 5px;
+  border-bottom-left-radius: 2rem;
+}
+
+.btn-primary {
+  padding: 3px;
+  padding-left: 10px ;
+  color: $color1;
+  background-color: $color3;
+  border-color: $color4;
 }
 
 .item__save--img {
-  width: 20px;
+  padding-left: 5px ;
+  width: 18px;
 }
 
 .item__rating--img {
   width: 20px;
   height: 20px;
-  border: 1px solid red;
-}
-
-.border {
-  border: 1px solid blue;
 }

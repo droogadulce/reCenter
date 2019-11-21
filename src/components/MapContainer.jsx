@@ -11,7 +11,7 @@ class MapContainer extends Component {
     const { centers } = props;
 
     this.state = {
-      centers,
+      centers, 
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
@@ -53,12 +53,12 @@ class MapContainer extends Component {
 
     return (
       <section className='map__container'>
-        <div className='map__items_filter'>
-          <Filters />
+        <div className="map__items_filter">
+          <Filters/>
         </div>
-        <div className='map__items_list'>
-          <ItemsList />
-        </div>
+        <div className="map__items_list" dir="rtl">
+          <ItemsList/>
+        </div>  
         <div className='map__items_map'>
           <Map
             google={google}

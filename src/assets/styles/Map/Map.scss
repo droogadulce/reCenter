@@ -1,4 +1,9 @@
-/*body {
+$color1: #fbfad3;
+$color2: #c6e377;
+$color3: #729d39;
+$color4: #36622b;
+
+/*body { 
   margin: 0;
   padding: 0;
 }
@@ -10,9 +15,9 @@ section {
 
 .map__container {
   display: grid;
-  grid-template: 100px 1fr / 30% 70%;
+  grid-template: 10% 1fr / 30% 70%;
   height: 100vh;
-  grid-template-areas:
+  grid-template-areas: 
     'map__items_list map__items_filter'
     'map__items_list map__items_map';
   position: relative;
@@ -20,18 +25,29 @@ section {
 
 .map__items_list {
   grid-area: map__items_list;
-  overflow: hidden;
-  overflow-y: scroll;
+  padding: 5px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-decoration: none;
+  border-top: solid 2px $color3;
+  border-right: solid 2px $color3;
+  display: flex;
+  flex-flow: column nowrap;
+  scroll-snap-type: y mandatory;
+  background-color: $color1;
+  scrollbar-width: none; 
+}
+
+.map__items_list :hover{
   text-decoration: none;
 }
 
 .map__items_filter {
   grid-area: map__items_filter;
-  border: 1px solid blue;
+  display: grid;
 }
 
 .map__items_map {
   grid-area: map__items_map;
-  border: 1px solid pink;
   overflow: hidden;
 }

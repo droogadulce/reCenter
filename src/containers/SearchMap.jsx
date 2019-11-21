@@ -10,7 +10,11 @@ const SearchMap = props => {
     dispatch(getFilteredCenters(tag));
   }, []);
   console.log(tag);
-  return <MapContainer />;
+  return (
+    <>
+      <MapContainer />
+    </>
+  );
 };
 
 const mapStateToProps = state => {

@@ -1,15 +1,25 @@
+$color1: #fbfad3;
+$color2: #c6e377;
+$color3: #729d39;
+$color4: #36622b;
+$colorBack: #eaeaea;
+$colorCards: #d9d9d9;
+
 .banner__container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 200px);
   height: 100vh;
   grid-gap: 5px;
+  border-top: 2px solid $color3;
+  padding: 4px;
 }
 
 .banner__img {
   background: lightblue;
   padding: 10px;
-  border: 1px solid red;
+  display: grid;
+  place-content: center;
 }
 
 .banner__img:nth-of-type(1) {

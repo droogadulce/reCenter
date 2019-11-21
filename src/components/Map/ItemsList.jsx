@@ -5,11 +5,11 @@ import Item from './Item';
 const ItemsList = ({ centers }) => {
   if (centers.length > 0) {
     return (
-      <div>
+      <>
         {centers.map(item => (
           <Item {...item} key={item.id} />
         ))}
-      </div>
+      </>
     );
   }
   return <p>No hay centros de reciclaje con esa categoría :c</p>;

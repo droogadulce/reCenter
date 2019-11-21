@@ -1,0 +1,71 @@
+$color1: #fbfad3;
+$color2: #c6e377;
+$color3: #729d39;
+$color4: #36622b;
+$colorHigh: #c9f658;
+
+$size_filtro: 0.875rem;
+
+.filtro {
+    display: grid;
+    grid-template-rows: 1fr; 
+    grid-template-columns: 20% 1fr;
+    border: solid 2px $color3;
+    border-left: 0;
+    font-size: $size_filtro;
+}
+
+.filtro p {
+    grid-column: 1;
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-weight: bold;
+    overflow: hidden;
+    place-self: center;
+}
+
+.btn-group {
+    grid-column: 2;
+    place-self: center start;
+}
+
+.btn-group button{
+    margin: 0;
+    color: $color1;
+    background-color: $color3 ;
+    border-color: rgba($color: $color4, $alpha: 0.5);
+}
+
+/* .btn-group :hover :not(.dropdown-menu) :not(.dropdown-item){
+    background-color: $color4 ;
+    border-color: rgba($color: $color4, $alpha: 0.8);
+} */
+
+.btn-primary:hover{
+    color: $color4 !important;
+    background-color: $colorHigh !important;
+    border-color: rgba($color: $color4, $alpha: 0.8) !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: $color4 !important;
+    background-color: $colorHigh !important;
+    border-color: rgba($color: $color4, $alpha: 0.8) !important;
+    box-shadow: 0 0 0 .2rem rgba($color: $color4, $alpha:0.5) !important;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: $color4 !important;
+    background-color: $colorHigh !important;
+    box-shadow: none !important;
+}
+
+.btn {
+    font-size: $size_filtro;
+} 
+
+.dropdown-menu :hover{
+    border-radius: 0.75rem;
+    background-color: $color3 ;
+    color: white;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../assets/styles/Map/Item.scss';
+import { Button } from 'react-bootstrap';
+import '../../assets/styles/Map/Item.scss'; 
 import likeIcon from '../../assets/static/like-icon.png';
 import ratingIcon from '../../assets/static/star-icon.png';
 import recycleIcon from '../../assets/static/recycle.png';
@@ -12,7 +13,9 @@ const Item = props => {
       <div className='item__container'>
         <img className='item__img' src={recycleIcon} alt='Center' />
         <h2 className='item__title'>{name}</h2>
-        <p className='item__address'>{address.address}</p>
+        <div className='item__address'>
+          <p>{address.address}</p>
+        </div>
         <div className='item__tags'>
           <p>{garbageTypes.map(item => `${item} `)}</p>
         </div>
@@ -22,12 +25,12 @@ const Item = props => {
             src={ratingIcon}
             alt='Rating Icon'
           />
-          <p className='border'>{rating}</p>
+          <p>{rating}</p>
         </div>
-        <button className='item__like_btn' type='button'>
+        <Button className='item__like_btn' size="sm">
           <img className='item__save--img' src={likeIcon} alt='Like Icon' />
           Guardar
-        </button>
+        </Button>
       </div>
     </Link>
   );
