@@ -13,6 +13,8 @@ $colorCards: #d9d9d9;
 .card-header{
     background-color: $colorBack;
     padding: 7px 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 .card-body{

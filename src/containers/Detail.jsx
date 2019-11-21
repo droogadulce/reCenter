@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { getCenterDetail } from '../actions';
-import { Table } from 'react-bootstrap';
+import { Table, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import Banner from '../components/Detail/Banner';
 import Description from '../components/Detail/Description';
 import Tag from '../components/Detail/Tag';
@@ -48,10 +48,15 @@ const Detail = props => {
           <Schedule schedule={schedule} />
         </div>
         <div className='detail__rating'>
-          <h2>Reseñas</h2>
-          <RatingInfo rating={rating} />
-          <NewComment />
-          <CommentsList />
+          <Card>
+            <Card.Header as="h5">Reseñas: <RatingInfo rating={rating} /></Card.Header>
+            <Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item> <CommentsList /> </ListGroup.Item>
+                <ListGroup.Item> <NewComment /> </ListGroup.Item>
+              </ListGroup>
+            </Card.Body>
+          </Card>
         </div>
         <div className='detail__map'>
           <Map
