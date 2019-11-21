@@ -1,0 +1,33 @@
+$color1: #fbfad3;
+$color2: #c6e377;
+$color3: #729d39;
+$color4: #36622b;
+$colorBack: #eaeaea;
+$colorCards: #d9d9d9;
+
+.card{
+    border: 2px solid $color3 ;
+    box-shadow: 6px 8px 2px rgba($color: $color3, $alpha: 0.8);
+}
+
+.card-header{
+    background-color: $colorBack;
+    padding: 7px 20px;
+}
+
+.card-body{
+    background-color: $colorCards;
+}
+
+.card-body p{
+    margin-bottom: 12px;
+}
+
+.card-title{
+    font-weight: bold;
+}
+
+.item__like_btn{
+    border-radius: 0.25rem;
+    padding: 4px;
+}
