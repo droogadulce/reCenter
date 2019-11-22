@@ -6,7 +6,7 @@ import '../assets/styles/components/Categories.scss';
 const Categories = ({ tags }) => (
   <section className='categories'>
     {tags.map(item => (
-      <Link to={`/searchmap/${item.tag}`}>
+      <Link to={`/searchmap/${item.tag}`} key={item.id}>
         <div className='categories__item' key={item.id} id={item.id}>
           <p>{item.tag}</p>
           <img

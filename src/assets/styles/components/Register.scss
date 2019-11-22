@@ -6,56 +6,56 @@ $color4: #36622b;
 $principalFont: 'Oleo Script', cursive;
 
 $registerWidth: 40vw;
-$registerHeight: 50vh;
+$registerHeight: 60vh;
 
 .register {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .register__card {
-    margin: 50px 0px;
-    padding: 10px;
-    width: $registerHeight;
-    height: $registerHeight;
-    border: 0.25em solid $color4;
-    border-radius: 10px ;
-    background-color: $color1 ;
-    box-shadow: 6px 8px 2px rgba($color: $color3, $alpha: 0.8);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    overflow: auto; //mejor ajustar a tamaño de carta
-    scrollbar-color: $color4 $color1;
-    scrollbar-width: thin;
+  margin: 50px 0px;
+  padding: 10px;
+  width: $registerHeight;
+  height: $registerHeight;
+  border: 0.25em solid $color4;
+  border-radius: 10px;
+  background-color: $color1;
+  box-shadow: 6px 8px 2px rgba($color: $color3, $alpha: 0.8);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  overflow: auto; //mejor ajustar a tamaño de carta
+  scrollbar-color: $color4 $color1;
+  scrollbar-width: thin;
 }
 
 .register__card h1 {
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 35px;
-    font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
 }
 
 .form-group {
-    margin: 10px 0px;
+  margin: 10px 0px;
 }
 
 .form-label {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .form-check {
-    margin: 5px 0;
-    text-align: right;
+  margin: 5px 0;
+  text-align: right;
 }
 
 .form-check-label {
-    font-size: 0.75em;
+  font-size: 0.75em;
 }
 
 .btn {
-    grid-row: 5;
-    justify-items: stretch;
-    margin-bottom: 10px;
+  grid-row: 5;
+  justify-items: stretch;
+  margin-bottom: 10px;
 }

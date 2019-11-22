@@ -1,5 +1,15 @@
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'LOGIN_REQUEST':
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case 'LOGOUT_REQUEST':
+      return {
+        ...state,
+        user: action.payload,
+      };
     case 'GET_CENTER_DETAIL':
       return {
         ...state,
@@ -7,6 +17,9 @@ const reducer = (state, action) => {
           state.centers.find(item => item.id === Number(action.payload)) || {},
       };
     case 'FILTER_CENTERS':
+      if (action.payload === 'all') {
+        return state.centers;
+      }
       return {
         ...state,
         centers: state.centers.filter(items =>

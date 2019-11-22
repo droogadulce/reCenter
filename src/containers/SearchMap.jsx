@@ -6,10 +6,12 @@ import MapContainer from '../components/MapContainer';
 const SearchMap = props => {
   const { tag } = props.match.params;
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getFilteredCenters(tag));
-  }, []);
-  console.log(tag);
+  if (tag) {
+    useEffect(() => {
+      dispatch(getFilteredCenters(tag));
+    }, []);
+    console.log(tag);
+  }
   return (
     <>
       <MapContainer />

@@ -21,6 +21,7 @@
   "homepage": "https://github.com/droogadulce/reCenter#readme",
   "dependencies": {
     "google-maps-react": "^2.0.2",
+    "md5": "^2.2.1",
     "react": "^16.10.2",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.10.2",
