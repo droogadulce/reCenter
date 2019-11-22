@@ -1,0 +1,37 @@
+$color1: #fbfad3;
+$color2: #c6e377;
+$color3: #729d39;
+$color4: #36622b;
+$colorBack: #eaeaea;
+$colorCards: #d9d9d9;
+$colorHigh: #c9f658;
+
+.page404{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 10px;
+}
+
+.page404_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.page404_img img{
+    max-width: 340px;
+    margin: 0;
+}
+
+.page404_text{
+    text-align: center;
+    font-weight: bold;
+}
+
+.page404_text h3{
+    font-size: 43px;
+    margin: 0;
+}
