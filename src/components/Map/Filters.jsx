@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button , ButtonGroup , Dropdown , DropdownButton } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Button , ButtonGroup , DropdownItem , DropdownButton } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import '../../assets/styles/Map/Filters.scss';
 
@@ -12,7 +13,11 @@ const Filters = ({ tags }) => (
       <Button>Recompensa</Button>
       <DropdownButton as={ButtonGroup} title="Categorias">
         {tags.map( item => (
-          <Dropdown.Item key={item.id} >{item.tag}</Dropdown.Item>
+          <DropdownItem key={item.id} >
+            <Link to={`/searchmap/${item.tag}`} key={item.id}>
+              {item.tag}
+            </Link>
+          </DropdownItem>
         ))}
       </DropdownButton>
     </ButtonGroup>

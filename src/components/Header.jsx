@@ -38,7 +38,7 @@ const Header = props => {
           </p>
         )}
         {hasUser ? (
-          <a href='#logout' onClick={handleLogout}>
+          <a className="header_cerrar" href='#logout' onClick={handleLogout}>
             Cerrar sesión
           </a>
         ) : null}

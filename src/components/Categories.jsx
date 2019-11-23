@@ -15,7 +15,7 @@ const Categories = ({ tags }) => (
             className='categories__item_img'
           />
         </div>
-      </Link>
+      </Link> 
     ))}
   </section>
 );

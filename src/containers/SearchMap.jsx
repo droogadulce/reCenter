@@ -13,9 +13,9 @@ const SearchMap = props => {
     console.log(tag);
   }
   return (
-    <>
+    <React.Fragment>
       <MapContainer />
-    </>
+    </React.Fragment>
   );
 };
 
